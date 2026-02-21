@@ -1,0 +1,10 @@
+Julio César Gómez Frausto
+
+Las propiedades CSS que más me ayudaron fueron box-shadow y :hover.
+Me permitieron hacer que el diseño se viera más moderno y dinámico.
+
+Lo más difícil fue ajustar los márgenes y espaciados para que el diseño no se viera saturado.
+También fue importante mantener consistencia en los colores, que los colores tuvieran correlación entre ellos y que se vieran en tonos profesionales no tan brillantes.
+
+Lo que más me gustó fue que el CV se ve limpio y profesional.
+El diseño final refleja mi estilo de una manera más libre, cambiando la paleta de colores y la tipografía del texto.
