@@ -1,0 +1,387 @@
+/*
+==============================================================================
+STYLE.CSS - NIVEL BÁSICO
+==============================================================================
+Este archivo está CASI completo. Solo debes completar los valores marcados 
+con /* COMPLETA AQUÍ */ 
+
+/*
+Lee TODOS los comentarios para entender qué hace cada línea.
+==============================================================================
+*/
+
+/* 
+==============================================================================
+RESET Y CONFIGURACIÓN BASE
+==============================================================================
+*/
+
+/* Resetear márgenes y padding por defecto del navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Incluye padding y border en el ancho total */
+}
+
+/* 
+==============================================================================
+BODY - ESTILOS GENERALES DE LA PÁGINA
+==============================================================================
+*/
+body {
+    font-family: 'Inter', Arial, sans-serif; /* Fuente principal */
+    background-color: #f5f5f5; /* Fondo gris claro para toda la página */
+    color: #333; /* Color de texto general (gris oscuro) */
+    line-height: 1.6; /* Espaciado entre líneas para mejor legibilidad */
+    padding: 20px; /* Espacio alrededor de todo el contenido */
+}
+
+/* 
+==============================================================================
+CV CONTAINER - CONTENEDOR PRINCIPAL CON FLEXBOX
+==============================================================================
+Este es el contenedor que usa Flexbox para crear las 2 columnas
+*/
+.cv-container {
+    display: flex; /* ¡ACTIVA FLEXBOX! Esto hace que los hijos se alineen */
+    max-width: 1200px; /* Ancho máximo del CV */
+    margin: 0 auto; /* Centra el CV horizontalmente */
+    background: white; /* Fondo blanco para el CV */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); /* Sombra sutil alrededor */
+    border-radius: 10px; /* Esquinas redondeadas */
+    overflow: hidden; /* Evita que el contenido se salga de las esquinas */
+    gap: 0; /* Sin espacio entre sidebar y main-content (están pegados) */
+}
+
+/* 
+==============================================================================
+SIDEBAR - COLUMNA IZQUIERDA (Foto, Contacto, Habilidades)
+==============================================================================
+*/
+.sidebar {
+    /* COMPLETA AQUÍ: ¿Cuánto espacio debe ocupar el sidebar? */
+    flex: 0 0 300px; /* No crece, no encoge, ancho fijo de 300px */
+    
+    background: #2c3e50; /* Fondo azul oscuro para el sidebar */
+    color: white; /* Texto blanco */
+    padding: 40px 30px; /* Espacio interno: 40px arriba/abajo, 30px izq/der */
+}
+
+/* 
+==============================================================================
+FOTO DE PERFIL
+==============================================================================
+*/
+.profile-photo {
+    text-align: center; /* Centra la foto */
+    margin-bottom: 30px; /* Espacio debajo de la foto */
+}
+
+.photo-placeholder {
+    width: 150px; /* Ancho del placeholder */
+    height: 150px; /* Alto del placeholder */
+    background: rgba(255, 255, 255, 0.1); /* Fondo semi-transparente */
+    border-radius: 50%; /* Hace un círculo perfecto */
+    margin: 0 auto; /* Centra el círculo */
+    display: flex; /* Usa flex para centrar el emoji */
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    font-size: 60px; /* Tamaño del emoji */
+}
+
+/* Si usas una imagen real, este estilo la hace circular */
+.profile-photo img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Imagen circular */
+    object-fit: cover; /* La imagen cubre todo el espacio sin deformarse */
+    border: 4px solid white; /* Borde blanco alrededor de la foto */
+}
+
+/* 
+==============================================================================
+HEADER DEL SIDEBAR (Nombre y título)
+==============================================================================
+*/
+.sidebar-header {
+    text-align: center; /* Centra el nombre y título */
+    margin-bottom: 30px; /* Espacio debajo */
+    padding-bottom: 30px; /* Espacio interno abajo */
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2); /* Línea divisoria sutil */
+}
+
+.sidebar-header h1 {
+    font-size: 1.8em; /* Tamaño grande para el nombre */
+    margin-bottom: 10px; /* Espacio debajo del nombre */
+    color: white; /* Color blanco */
+    font-weight: 700; /* Negrita */
+}
+
+.job-title {
+    font-size: 1.1em; /* Tamaño mediano */
+    color: #3498db; /* Color azul claro (destaca del fondo oscuro) */
+    font-weight: 600; /* Semi-negrita */
+}
+
+/* 
+==============================================================================
+SECCIONES DEL SIDEBAR (Contacto, Habilidades, Idiomas)
+==============================================================================
+*/
+.sidebar-section {
+    margin-bottom: 30px; /* Espacio entre cada sección */
+}
+
+.sidebar-section h2 {
+    /* COMPLETA AQUÍ: ¿Qué tamaño debe tener el título? */
+    font-size: 1.3em;
+    
+    margin-bottom: 15px; /* Espacio debajo del título */
+    color: #3498db; /* Color azul claro */
+    font-weight: 600; /* Semi-negrita */
+}
+
+/* 
+==============================================================================
+LISTA DE CONTACTO
+==============================================================================
+*/
+.contact-list {
+    list-style: none; /* Quita los bullets */
+    padding: 0; /* Sin padding */
+}
+
+.contact-list li {
+    margin-bottom: 15px; /* Espacio entre cada item */
+    line-height: 1.6; /* Espaciado de líneas */
+    font-size: 0.95em; /* Tamaño ligeramente menor */
+}
+
+.contact-list strong {
+    color: #3498db; /* Etiquetas en azul claro */
+}
+
+.contact-list a {
+    color: white; /* Links en blanco */
+    text-decoration: none; /* Sin subrayado */
+    transition: color 0.3s; /* Transición suave al pasar mouse */
+}
+
+.contact-list a:hover {
+    color: #3498db; /* Cambia a azul al pasar mouse */
+    text-decoration: underline; /* Se subraya al pasar mouse */
+}
+
+/* 
+==============================================================================
+LISTA DE HABILIDADES
+==============================================================================
+*/
+.skills-list {
+    list-style: none; /* Sin bullets */
+    padding: 0;
+}
+
+.skills-list li {
+    background: rgba(52, 152, 219, 0.2); /* Fondo azul semi-transparente */
+    padding: 10px 15px; /* Espacio interno */
+    margin-bottom: 10px; /* Espacio entre items */
+    border-radius: 5px; /* Esquinas redondeadas */
+    border-left: 3px solid #3498db; /* Borde azul a la izquierda */
+    font-size: 0.95em; /* Tamaño ligeramente menor */
+}
+
+/* 
+==============================================================================
+LISTA DE IDIOMAS
+==============================================================================
+*/
+.languages-list {
+    list-style: none;
+    padding: 0;
+}
+
+.languages-list li {
+    margin-bottom: 10px;
+    font-size: 0.95em;
+}
+
+.languages-list strong {
+    color: #3498db;
+}
+
+/* 
+==============================================================================
+MAIN CONTENT - COLUMNA DERECHA (Sobre mí, Experiencia, Proyectos)
+==============================================================================
+*/
+.main-content {
+    /* COMPLETA AQUÍ: ¿Cómo hacer que ocupe todo el espacio restante? */
+    flex: 1; /* Toma todo el espacio que queda después del sidebar */
+    
+    padding: 40px; /* Espacio interno generoso */
+    background: white; /* Fondo blanco */
+}
+
+/* 
+==============================================================================
+SECCIONES DEL CONTENIDO PRINCIPAL
+==============================================================================
+*/
+.content-section {
+    margin-bottom: 40px; /* Espacio grande entre secciones */
+}
+
+.content-section h2 {
+    font-size: 2em; /* Tamaño grande para títulos principales */
+    color: #2c3e50; /* Color azul oscuro */
+    margin-bottom: 20px; /* Espacio debajo */
+    padding-bottom: 10px; /* Espacio interno abajo */
+    border-bottom: 3px solid #3498db; /* Línea azul debajo del título */
+}
+
+.content-section p {
+    margin-bottom: 15px; /* Espacio entre párrafos */
+    line-height: 1.8; /* Espaciado cómodo para leer */
+    color: #555; /* Gris medio para el texto */
+}
+
+/* 
+==============================================================================
+ITEMS DE EXPERIENCIA
+==============================================================================
+*/
+.experience-item {
+    margin-bottom: 25px; /* Espacio entre cada experiencia */
+    padding-bottom: 25px; /* Espacio interno abajo */
+    border-bottom: 1px solid #e0e0e0; /* Línea divisoria sutil */
+}
+
+.experience-item:last-child {
+    border-bottom: none; /* Quita la línea del último item */
+}
+
+.experience-item h3 {
+    font-size: 1.4em; /* Tamaño del título de la experiencia */
+    color: #2c3e50; /* Azul oscuro */
+    margin-bottom: 8px; /* Espacio debajo */
+}
+
+.date-range {
+    font-size: 0.95em; /* Tamaño menor */
+    color: #3498db; /* Azul claro */
+    font-weight: 600; /* Semi-negrita */
+    margin-bottom: 10px; /* Espacio debajo */
+}
+
+.description {
+    color: #666; /* Gris medio */
+    line-height: 1.7; /* Espaciado cómodo */
+}
+
+/* 
+==============================================================================
+ITEMS DE PROYECTOS
+==============================================================================
+*/
+.project-item {
+    margin-bottom: 25px;
+    padding: 20px;
+    background: #f8f9fa; /* Fondo gris muy claro */
+    border-radius: 8px; /* Esquinas redondeadas */
+    border-left: 4px solid #3498db; /* Borde azul a la izquierda */
+}
+
+.project-item h3 {
+    font-size: 1.3em;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.tech-stack {
+    font-size: 0.95em;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.tech-stack strong {
+    color: #3498db;
+}
+
+.project-link {
+    display: inline-block; /* Para poder agregarle padding */
+    margin-top: 10px;
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s; /* Transición suave */
+}
+
+.project-link:hover {
+    color: #2980b9; /* Azul más oscuro al pasar mouse */
+    transform: translateX(5px); /* Se mueve 5px a la derecha */
+}
+
+/* 
+==============================================================================
+FOOTER
+==============================================================================
+*/
+.cv-footer {
+    background: #2c3e50; /* Fondo azul oscuro */
+    color: white; /* Texto blanco */
+    text-align: center; /* Texto centrado */
+    padding: 20px; /* Espacio interno */
+    margin-top: 0; /* Sin margen arriba (pegado al CV) */
+}
+
+.cv-footer p {
+    margin: 5px 0; /* Espacio pequeño entre párrafos */
+    font-size: 0.9em; /* Tamaño ligeramente menor */
+}
+
+/* 
+==============================================================================
+RESPONSIVE - PARA DISPOSITIVOS MÓVILES
+==============================================================================
+Solo para nivel avanzado, pero aquí está como referencia
+*/
+
+/* Cuando la pantalla es menor a 768px (tablets y móviles) */
+@media (max-width: 768px) {
+    .cv-container {
+        /* COMPLETA AQUÍ: ¿Cómo hacer que las columnas se apilen verticalmente? */
+        flex-direction: column; /* Cambia de horizontal a vertical */
+    }
+    
+    .sidebar {
+        flex: 1; /* Ocupa todo el ancho */
+    }
+    
+    .main-content {
+        padding: 30px 20px; /* Menos padding en móvil */
+    }
+}
+
+/* 
+==============================================================================
+FIN DEL CSS
+==============================================================================
+INSTRUCCIONES FINALES:
+
+1. Completa los valores marcados con /* COMPLETA AQUÍ */
+/*
+2. Los valores correctos están en los comentarios, solo escríbelos
+3. Guarda el archivo
+4. Recarga tu HTML en el navegador
+5. Verifica que el layout de 2 columnas funcione correctamente
+
+Si algo no funciona:
+- Revisa que el archivo se llame exactamente "style.css"
+- Verifica que esté en la misma carpeta que tu HTML
+- Usa DevTools (F12) para inspeccionar elementos
+- Revisa la consola (F12) por errores
+
+¡Éxito!
+==============================================================================
+*/
